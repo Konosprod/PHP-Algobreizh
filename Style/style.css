@@ -1,4 +1,8 @@
-ui-icon {
+.ui-icon {
 	font-size:1.5em;
 	text-shadow:1px 1px 1px #ccc;
+}
+
+.img-carousel {
+	height: 250px;
 }
