@@ -9,6 +9,8 @@
 
 body {
 	background-image: url('../Images/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
