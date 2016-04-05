@@ -1,0 +1,39 @@
+
+			<!-- Carousel des produits -->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  		<ol class="carousel-indicators">
+		  			{% for image in images %}
+		  				{% if loop.first %}
+		  					<li data-target="#myCarousel" data-slide-to="{{ loop.index0 }}" class="active"></li>
+		  				{% else %}
+		  					<li data-target="#myCarousel" data-slide-to="{{ loop.index0 }}"></li>
+		  				{% endif %}
+		  			{% endfor %}
+		  		</ol>
+		  		
+		  		<!-- Différentes images des produits -->
+		  		<div class="carousel-inner" role="listbox">
+		  		
+		  			{% for image in images %}
+		  				{% if loop.first %}
+		  					<div class="item active">
+		  						<img src="{{ image.src }}">
+		  					</div>
+		  				{% else %}
+		  					<div class="item">
+		  						<img src="{{ image.src }}">
+		  					</div>
+		  				{% endif %}
+		  			{% endfor %}
+		  		</div>
+		  	
+		  		<!-- Boutons de navigation -->
+		  		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    		<span class="sr-only">Précédent</span>
+		  		</a>
+		 		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    		<span class="sr-only">Suivant</span>
+		  		</a>
+			</div>
