@@ -16,11 +16,11 @@
 		  		
 		  			{% for image in images %}
 		  				{% if loop.first %}
-		  					<div class="item active">
+		  					<div class="item active img-carousel">
 		  						<img src="{{ image.src }}">
 		  					</div>
 		  				{% else %}
-		  					<div class="item">
+		  					<div class="item img-carousel">
 		  						<img src="{{ image.src }}">
 		  					</div>
 		  				{% endif %}
