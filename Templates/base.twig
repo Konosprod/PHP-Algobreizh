@@ -1,9 +1,11 @@
 <html>
 	<head>
 		{% include 'bootstrap.twig' %}
+		<title>
 		{% block title %}
 			Titre par défaut
 		{% endblock %}
+		</title>
 	</head>
 	<body>
 		<div class="container">
@@ -44,7 +46,7 @@
 			<div class="contenu">
 			{% block content %}
 				<p>Hello</p>
-			{% enblock %}
+			{% endblock %}
 			</div>
 		</div>
 	</body>
