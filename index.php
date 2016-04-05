@@ -1,5 +1,6 @@
 <?php
 include_once 'Twig/Autoloader.php';
+include_once 'Classes/SPDO.php';
 
 Twig_Autoloader::register();
 
@@ -9,7 +10,13 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('index.twig');
 
-echo $template->render(array());
+$images = array(array('src' => "Images/carroussel/carroussel1.png"),
+				array('src' => "Images/carroussel/carroussel2.png"),
+				array('src' => "Images/carroussel/carroussel3.png"));
+
+echo $template->render(array('images'=>$images
+	
+));
 
 
 ?>
