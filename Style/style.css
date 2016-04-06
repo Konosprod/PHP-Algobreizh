@@ -12,15 +12,17 @@
 	font-family: algerian;
 	text-align: center;
 	font-size: 60px;
-	text-shadow: 8px 8px 8px #303030;
+	text-shadow: 8px 8px 8px black;
 }
 
 .fen-login {
 	background: rgba(0, 0, 0, 0.7);
 	margin-top:150px;
 	padding:50px;
-	margin-left:30%;
-	margin-right:30%
+	margin-left:35%;
+	margin-right:35%;
+	text-align: center;
+	box-shadow: 8px 8px 8px black;
 }
 
 body {

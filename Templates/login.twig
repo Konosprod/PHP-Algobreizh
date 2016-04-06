@@ -5,13 +5,16 @@
 		Login
 	{% endblock %}
 	</head>
-	<body style="background-image: url('../Images/background_login.jpg');">
+	<body>
 		<div>
 			<h1 class="title"> ALGOBREIZH </h1>
 		</div>
 		<form name="connexion" method="post" action="Pages/login.php">
 			<div class="fen-login">
-				
+				<label style="color:white;">Code client  : </label> <input type="text" name="code"/> <br/><br/>
+				<label style="color:white">Mot de passe  : </label> <input type="password" name="password"/><br/><br/>
+				<input class="btn" type="submit" name="valider" value="OK"/> <br/><br/>
+				<a href="ask_password.twig" class="btn btn-success">Demande de mot de passe</a>
 			<div>
 		</form>
 	
