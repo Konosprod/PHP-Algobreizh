@@ -46,6 +46,7 @@ body {
 
 .navbar-default {
     border-color: green;
+    box-shadow: 2px 2px 2px #333333;    
 }
 
 /* link */
@@ -55,4 +56,30 @@ body {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: lightgreen;
+}
+
+.mainpage {
+	width: 1005px;
+	margin: 0 auto;
+}
+
+.contenu {
+	min-height: 750px;
+	float:right;
+}
+.sidebar {
+	width:200px;
+	border: 1px solid green;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 2px #333333;
+	margin-top:10px;
+	position:fixed;
+}
+
+.menu-item {
+	list-style-type : none;
+	margin : 0;
+	padding : 0;
 }

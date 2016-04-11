@@ -1,6 +1,7 @@
 <html>
 	<head>
 		{% include 'bootstrap.twig' %}
+		<link rel="stylesheet" href="Style/style.css">
 		<title>
 		{% block title %}
 			Titre par défaut
@@ -42,11 +43,17 @@
 				{% include 'carousel.twig' %}
 			{% endif %}
 			
+			
 			<!-- Contenu de la page -->
-			<div class="contenu">
-			{% block content %}
-				<p>Hello</p>
-			{% endblock %}
+			<div class="mainpage">
+				<div id="menu">
+					{% include 'menu.twig' %}
+				</div>
+				<div class="contenu">
+					{% block content %}
+						<p>Hello</p>
+					{% endblock %}
+				</div>
 			</div>
 		</div>
 	</body>
