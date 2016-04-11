@@ -21,8 +21,8 @@ if (isset ($_POST["code"]) && isset ($_POST["password"]))
 	$res = $stmt->fetch(PDO::FETCH_ASSOC);
 	if ($res != NULL)
 	{
-		$template = $twig->loadTemplate('index.twig');
-		echo $template->render(array());
+		header("Location: accueil.php");
+					die();
 	}
 	
 	
