@@ -10,13 +10,6 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('login.twig');
 
-$images = array(array('src' => "Images/carroussel/carroussel1.png"),
-				array('src' => "Images/carroussel/carroussel2.png"),
-				array('src' => "Images/carroussel/carroussel3.png"));
-
-echo $template->render(array('images'=>$images
-	
-));
 
 
 ?>
