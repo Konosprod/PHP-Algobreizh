@@ -63,8 +63,10 @@ body {
 
 .contenu {
 	min-width: 750px;
+	max-width: 770px;
 	float:right;
-	margin-top:10px;
+	margin-top:30px;
+	maring-left:30px;
 }
 
 #menu {
@@ -72,18 +74,40 @@ body {
 	min-height:750px;
 }
 
+.menu-title {
+	padding-left:5px;
+}
+
 .sidebar {
-	width:200px;
 	border: 1px solid green;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	box-shadow: 2px 2px 2px #303030;
-	margin-top:10px;
+	margin-top:30px;
+	background-color: #50BB50;
+}
+
+.sidebar ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+.menu-item a {
+	display:block;
+	list-style-type : none;
+	padding: 8px 0 8px 16px;
+	text-decoration: none;
+	color : green;
+	border-top : solid 1px;
 }
 
 .menu-item {
-	list-style-type : none;
-	margin : 0;
-	padding : 0;
+	background-color: white;
+}
+
+.menu-item:hover {
+	background-color : #F0F0F0;
 }

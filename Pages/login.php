@@ -22,7 +22,7 @@ if (isset ($_POST["code"]) && isset ($_POST["password"]))
 	if ($res != NULL)
 	{
 		header("Location: accueil.php");
-					die();
+		die();
 	}
 	
 	

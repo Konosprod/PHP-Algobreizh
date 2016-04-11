@@ -14,7 +14,12 @@ $images = array(array('src' => "../Images/carroussel/carroussel1.png"),
 				array('src' => "../Images/carroussel/carroussel2.png"),
 				array('src' => "../Images/carroussel/carroussel3.png"));
 
-echo $template->render(array('images'=>$images
+$pdo = SPDO::getInstance();
+$sql = "SELECT * from familles";
+$stmt = $pdo->query($sql);
+$famille = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo $template->render(array('images'=>$images, 'familles'=>$famille
 	
 ));
 
