@@ -34,7 +34,6 @@ body {
 .custom-container {
 	background-color : white; 
 	margin-top: 30px; 
-	height: 100%; 
 	margin-bottom: 30px;
 	box-shadow: 8px 8px 8px #303030;
 }
@@ -46,7 +45,7 @@ body {
 
 .navbar-default {
     border-color: green;
-    box-shadow: 2px 2px 2px #333333;    
+    box-shadow: 2px 2px 2px #303030;    
 }
 
 /* link */
@@ -60,22 +59,27 @@ body {
 
 .mainpage {
 	width: 1005px;
-	margin: 0 auto;
 }
 
 .contenu {
-	min-height: 750px;
+	min-width: 750px;
 	float:right;
+	margin-top:10px;
 }
+
+#menu {
+	float:left;
+	min-height:750px;
+}
+
 .sidebar {
 	width:200px;
 	border: 1px solid green;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
-	box-shadow: 2px 2px 2px #333333;
+	box-shadow: 2px 2px 2px #303030;
 	margin-top:10px;
-	position:fixed;
 }
 
 .menu-item {
