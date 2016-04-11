@@ -1,5 +1,4 @@
 <?php
-
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 
@@ -11,8 +10,5 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('ask_password.twig');
 
-
-
 echo $template->render(array());
-
 ?>

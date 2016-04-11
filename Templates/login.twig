@@ -1,6 +1,7 @@
 <html>
 	<head>
 	{% include 'bootstrap.twig' %}
+	<link rel="stylesheet" href="Style/style.css"/>
 	{% block title %}
 		Login
 	{% endblock %}
@@ -14,7 +15,7 @@
 				<label style="color:white;">Code client  : </label> <input type="text" name="code"/> <br/><br/>
 				<label style="color:white">Mot de passe  : </label> <input type="password" name="password"/><br/><br/>
 				<input class="btn" type="submit" name="valider" value="OK"/> <br/><br/>
-				<a href="ask_password.twig" class="btn btn-success">Demande de mot de passe</a>
+				<a href="Pages/ask_password.php" class="btn btn-success">Demande de mot de passe</a>
 			<div>
 		</form>
 	
