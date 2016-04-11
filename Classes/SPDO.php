@@ -50,7 +50,7 @@ class SPDO
    	*
    	* @var string
    	*/
- 	const DEFAULT_SQL_DTB = 'jobeet';
+ 	const DEFAULT_SQL_DTB = 'algobreizh_gestion';
  
   	/**
    	* Constructeur
