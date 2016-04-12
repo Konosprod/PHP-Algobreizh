@@ -8,7 +8,7 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/../Templates');
 
 $twig = new Twig_Environment($loader);
 
-$template = $twig->loadTemplate('commandes.twig');
+$template = $twig->loadTemplate('factures.twig');
 
 echo $template->render(array());
 ?>
