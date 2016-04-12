@@ -25,6 +25,45 @@
 	box-shadow: 8px 8px 8px black;
 }
 
+.logo-algo {
+	float:left;
+	height:50px;
+}
+
+.logo-algo h1 {
+	text-align:center;
+	display:inline-block;
+	position:relative;
+	margin-top:30px;
+	margin-left:30px;
+	font-family:"georgia";
+	color:green;
+}
+
+.logo-algo img {
+	display:inline-block;
+	position:relative;
+	margin-top:-20px;
+}
+
+.action-user {
+	float:right;
+}
+
+.panier {
+	margin-top:15px;
+}
+
+.deconnexion {
+	margin-top:15px;
+}
+
+
+
+.header {
+	min-height:100px;	
+}
+
 body {
 	background-image: url('../Images/background.jpg');
 	background-repeat: no-repeat;
