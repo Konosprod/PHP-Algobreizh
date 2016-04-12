@@ -136,9 +136,9 @@ body {
 
 .sidebar {
 	border: 1px solid green;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	box-shadow: 2px 2px 2px #303030;
 	margin-top:30px;
 	background-color: #50BB50;
