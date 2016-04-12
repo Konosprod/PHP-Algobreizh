@@ -108,6 +108,14 @@ body {
 	maring-left:30px;
 }
 
+.contenu img {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 10px;
+	box-shadow: 2px 2px 2px #303030;
+}
+
 #menu {
 	float:left;
 	min-height:750px;
