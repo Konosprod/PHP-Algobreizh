@@ -7,7 +7,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expended="false">Produits <span class="caret"></a>
 					<ul class="dropdown-menu">
 						{% for famille in familles %}
-							<li><a href="Pages/produits.php?f={{ famille.idFamille }}">{{ famille.libelleFamille }}</a></li>
+							<li><a href="produits.php?f={{ famille.idFamille }}">{{ famille.libelleFamille }}</a></li>
 						{% endfor %}
 					</ul>
 				</li>

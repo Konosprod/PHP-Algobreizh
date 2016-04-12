@@ -2,7 +2,7 @@
 	<h4 class="menu-title">Nos produits</h4>
 	<ul>
 		{% for famille in familles %}
-			<li class="menu-item"><a href="Pages/produits.php?f={{ famille.idFamille }}">{{ famille.libelleFamille }}</a></li>
+			<li class="menu-item"><a href="produits.php?f={{ famille.idFamille }}">{{ famille.libelleFamille }}</a></li>
 		{% endfor %}
 	</ul>
 </nav>
