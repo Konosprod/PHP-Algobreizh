@@ -10,6 +10,6 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('login.twig');
 
-
+echo $template->render(array());
 
 ?>
