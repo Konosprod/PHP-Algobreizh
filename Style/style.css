@@ -64,6 +64,15 @@
 	min-height:100px;	
 }
 
+.header a {
+	text-decoration: none;
+	color:green;	
+}
+
+.header a:hover {
+	color: lightgreen;
+}
+
 body {
 	background-image: url('../Images/background.jpg');
 	background-repeat: no-repeat;
