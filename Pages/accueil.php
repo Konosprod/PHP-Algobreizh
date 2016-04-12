@@ -10,9 +10,10 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('accueil.twig');
 
-$images = array(array('src' => "../Images/carroussel/carroussel1.png"),
-				array('src' => "../Images/carroussel/carroussel2.png"),
-				array('src' => "../Images/carroussel/carroussel3.png"));
+$images = array(array('src' => "../Images/images_famille/famille_poudre.png"),
+				array('src' => "../Images/images_famille/famille_pate.png"),
+				array('src' => "../Images/images_famille/famille_seche.png"),
+				array('src' => "../Images/images_famille/famille_conserve.png"));
 
 $pdo = SPDO::getInstance();
 $sql = "SELECT * from familles";
