@@ -1,5 +1,7 @@
 <?php
 
+include_once '../Classes/SPDO.php';
+
 if (isset ($_POST["code"]) && isset ($_POST["password"]))
 {
 	$hash = hash('sha256', $_POST['password']);
