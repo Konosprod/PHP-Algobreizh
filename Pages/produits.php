@@ -19,11 +19,11 @@ $sqlproduit = "SELECT * FROM articles WHERE idFamille ='".$_GET['f']."'";
 $stmtproduit = $pdo->query($sqlproduit);
 $produit = $stmtproduit->fetchAll(PDO::FETCH_ASSOC);
 
+$sqlbanner = "SELECT path FROM familles WHERE idFamille='".$_GET['f']."'";
+$stmtbanner = $pdo->query($sqlbanner);
+$banner = $stmtbanner->fetch(PDO::FETCH_ASSOC)["path"];
 
-$images = array(array('src' => "../Images/images_famille/famille_pate.png"));
-
-echo $template->render(array('familles'=>$famille, 'produits'=>$produit, 'images'=>$images
-	
+echo $template->render(array('familles'=>$famille, 'produits'=>$produit, 'img_banner'=>$banner
 ));
 
 
