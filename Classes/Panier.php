@@ -14,7 +14,7 @@ class Panier
 	
 	public function __construct() 
 	{
-		$this->$items = array();
+		$this->items = array();
 	}
 	
 	
