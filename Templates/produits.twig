@@ -39,7 +39,9 @@
         
 		{% endfor %}
     </div>
+{% endblock %}
 
+{% block script %}
 <script type="text/javascript">
 $(".form-item").submit(function(e) {
 	var form_data = $(this).serialize();
@@ -55,6 +57,5 @@ $(".form-item").submit(function(e) {
 	
 	e.preventDefault();
 });
-
 </script>
 {% endblock %}

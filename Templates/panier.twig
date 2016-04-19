@@ -1,0 +1,64 @@
+{% extends 'base.twig' %}
+
+{% set carousel = true %}
+
+{% block title %}
+	Panier
+{% endblock %}
+
+{% block content %}
+<div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th class="text-center">Prix</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in panier %}
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <div class="thumbnail pull-left" href="#"><img class="media-object" src="{{ item.img }}" style="width: 72px; height: 72px;"></div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ item.nom }}</h4>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="number" step="1" min="1" max="10000" value="1">
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.prix|number_format(2) }}€</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.prix|number_format(2) }}€</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-xs btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button></td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                        <td class="text-right"><h3><strong>4.90€</strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                        <button type="button" class="btn btn-success">
+                            Valider <span class="glyphicon glyphicon-play"></span>
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
