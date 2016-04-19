@@ -26,9 +26,12 @@
                             <p class="lead">
                                 {{ produit.prix|number_format(2) }} € </p>
                         </div>
+                        <form class="form-item">
                         <div class="col-xs-12 col-md-6" style="margin-left:-20px">
-                            <a class="btn btn-success" href="#">Ajouter au panier</a>
+                            <input type="submit" class="btn btn-success" value="Ajouter au panier"/>
+                            <input name="idProduit" type="hidden" value="{{ produit.idArticle }}"/>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -37,4 +40,21 @@
 		{% endfor %}
     </div>
 
+<script type="text/javascript">
+$(".form-item").submit(function(e) {
+	var form_data = $(this).serialize();
+	
+	$.ajax({
+		url:"ajax.php",
+		type:"POST",
+		dataType:"json",
+		data:form_data
+	}).done(function(data){
+		alert("Ajouté au panier !");
+	})
+	
+	e.preventDefault();
+});
+
+</script>
 {% endblock %}
