@@ -2,6 +2,17 @@
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 
+if(!isset($_SESSION))
+{
+	session_start();
+}
+
+if(!$_SESSION["log"])
+{
+	header("Location: ..");
+	die();
+}
+
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../Templates');

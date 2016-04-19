@@ -47,4 +47,13 @@ if (isset ($_POST["code"]) && isset ($_POST["password"]))
 	
 }
 
+if($_GET["logout"] == 1)
+{
+	$_SESSION["log"] = false;
+	$_SESSION["panier"] = null;
+	$_SESSION["code"] = 0;
+	header("Location: ..");
+	die();
+}
+
 ?>
