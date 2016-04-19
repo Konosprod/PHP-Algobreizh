@@ -10,5 +10,11 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('factures.twig');
 
-echo $template->render(array());
+$pdo = SPDO::getInstance();
+$sql = "SELECT * FROM familles";
+$stmt = $pdo->query($sql);
+
+$familles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo $template->render(array("familles"=>$familles));
 ?>
