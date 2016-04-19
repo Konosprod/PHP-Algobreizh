@@ -29,6 +29,11 @@ class Panier
 			$this->items[] = $idProduit;
 		}
 	}
+	
+	public function recupereItems()
+	{
+		return $this->items;
+	}
 }
 
 
