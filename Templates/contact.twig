@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block title %}
+	Contact
+{% endblock%}
+
+{% block content %}
+<h3>Informations:</h3>
+<div>
+    <div>
+        <h4>Accès:</h4>
+        <div style="width:500px;max-width:100%;overflow:hidden;height:500px;color:red;">
+            <div id="display-google-map" style="height:100%; width:100%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=18+Rue+de+Molène,+Lampaul-Plouarzel,+France&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+            </div>
+            <a class="google-code" href="http://www.hostingreviews.website" id="get-data-for-map">hostingreviews</a><style>#display-google-map .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>*
+        </div>
+        <script src="https://www.hostingreviews.website/google-maps-authorization.js?id=1729e665-9d2b-c2e0-bdf6-75adf1fe7bc3&c=google-code&u=1461311450" defer="defer" async="async"></script>
+    </div>
+    <div>
+        <h4>Téléphone:</h4>
+        <p>02.98.97.96.95</p>
+        <h4>Email:</h4>
+        <p>info@algobreizh.com</p>
+    </div>
+</div>
+{% endblock %}
