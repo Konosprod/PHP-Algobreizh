@@ -167,3 +167,17 @@ body {
 .menu-item:hover {
 	background-color : #F0F0F0;
 }
+
+.map-acces {
+	float:left;
+	min-height:750px;
+}
+
+.informations {
+        min-width: 200px;
+        max-width: 300px;
+        float:right;
+        margin-top:30px;
+        maring-left:30px;
+
+}
