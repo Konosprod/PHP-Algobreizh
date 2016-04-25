@@ -38,6 +38,7 @@ $familles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $panier = unserialize($_SESSION['panier']);
 $items = $panier->recupereItems();
 $items_panier = array();
+$total = 0;
 
 foreach($items as $item)
 {
@@ -45,8 +46,9 @@ foreach($items as $item)
 	$stmtitem = $pdo->query($sql);
 	$vars = $stmtitem->fetch(PDO::FETCH_ASSOC);
 	$items_panier[] = array("img"=>$vars["path"], "prix"=>$vars["prix"],"nom"=>$vars["libelleArticle"]);
+	$total += $vars["prix"];
 }
 
-echo $template->render(array("familles"=>$familles, "images"=>$images, "panier"=>$items_panier));
+echo $template->render(array("familles"=>$familles, "images"=>$images, "panier"=>$items_panier, "total" => $total));
 
 ?>
