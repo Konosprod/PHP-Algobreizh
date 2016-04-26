@@ -45,7 +45,7 @@ foreach($items as $item)
 	$sql = "SELECT * FROM articles WHERE idArticle='".$item."'";
 	$stmtitem = $pdo->query($sql);
 	$vars = $stmtitem->fetch(PDO::FETCH_ASSOC);
-	$items_panier[] = array("img"=>$vars["path"], "prix"=>$vars["prix"],"nom"=>$vars["libelleArticle"]);
+	$items_panier[] = array("id"=>$vars["idArticle"], "img"=>$vars["path"], "prix"=>$vars["prix"],"nom"=>$vars["libelleArticle"]);
 	$total += $vars["prix"];
 }
 

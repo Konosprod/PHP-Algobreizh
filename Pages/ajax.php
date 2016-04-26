@@ -15,4 +15,13 @@ if (isset($_POST['idProduit']))
 	
 	die(json_encode(array("status"=>true)));
 }
+
+if(isset($_POST['removeProduit']))
+{
+	$panier = unserialize($_SESSION['panier']);
+	$panier->supprimerProduit($_POST['removeProduit']);
+	$_SESSION['panier'] = serialize($panier);
+	
+	die(json_encode(array("status"=>true)));
+}
 ?>

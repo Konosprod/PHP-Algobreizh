@@ -20,6 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                {% set i = 0 %}
                 {% for item in panier %}
                     <tr>
                         <td class="col-sm-8 col-md-6">
@@ -30,22 +31,23 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="number" step="1" min="1" max="10000" value="1">
+                        <input class="object{{ i }}" type="number" step="1" min="1" max="10000" value="1">
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.prix|number_format(2) }}€</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.prix|number_format(2) }}€</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong class="uprix{{ i }}">{{ item.prix|number_format(2) }}€</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong class="tprix{{ i }}">{{ item.prix|number_format(2) }}€</strong></td>
                         <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-xs btn-danger">
+                        <button type="button" class="btn btn-xs btn-danger" data="{{ item.id }}">
                             <span class="glyphicon glyphicon-remove"></span>
                         </button></td>
                     </tr>
+                    {% set i = i + 1 %}
                 {% endfor %}
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>{{ total|number_format(2) }}€</strong></h3></td>
+                        <td class="text-right"><h3><strong class="ptotal">{{ total|number_format(2) }}€</strong></h3></td>
                     </tr>
                     <tr>
                         <td>   </td>
@@ -65,5 +67,57 @@
 
 {% block script %}
 <script type="text/javascript">
+	function updatePrixTotal() {
+		var total = 0;
+		//Récupère le nombre de produits
+		var nbProduit = $('input').length;
+		
+		//Pour chaque produit
+		for(i = 0; i < nbProduit; i++)
+		{
+			//On incrémente le prix total par le prix total du prix courant
+			//Selectionné avec .tprixX
+			total += parseFloat($('.tprix'+i).html().slice(0, -1));
+		}
+		
+		//On met à jour le prix total
+		$('.ptotal').text(total.toFixed(2)+"€");
+	}
+	
+	//Fonction a effectuer à chaque changement de valeur
+	$('input').change(function() {
+		//On récupère la classe de l'objet qui est "objectX"
+		var classObject = $(this).attr("class");
+		//On récupère le numéro de l'objet
+		var id = classObject.substr(6);
+		//Définis le selector du prix unitaire de la forme ".uprixX"
+		var classPrixUnitaire = ".uprix"+id;
+		//Définis le selector du prix total du produit ".tprixX"
+		var classPrixProduit = ".tprix"+id;
+		//Récupère le prix unitaire du produit
+		var prixUnitaire = $(classPrixUnitaire).html().slice(0, -1);
+		//Récupère le nombre de produit
+		var nombreProduit = $(this).val();
+	
+		//On affiche le text du prix total du produit
+		$(classPrixProduit).text((nombreProduit * prixUnitaire).toFixed(2)+"€");
+	
+		//Mettre à jour le produit total
+		updatePrixTotal();
+	});
+	
+	$('.btn-danger').click(function() {
+		var itemId = $(this).attr('data');
+		var json = {"removeProduit":itemId};
+		
+		$.ajax({
+			url:"ajax.php",
+			type:"POST",
+			dataType:"json",
+			data:json
+		}).done(function(data){
+			window.location.reload();
+		});
+	});
 </script>
 {% endblock %}

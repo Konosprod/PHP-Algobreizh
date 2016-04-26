@@ -30,6 +30,30 @@ class Panier
 		}
 	}
 	
+	/**
+	 * Supprime un produit du panier
+	 * @param unknown $idProduit L'id du produit à supprimer
+	 */
+	public function supprimerProduit($idProduit)
+	{
+		$newItems = array();
+		
+		foreach($this->items as $item)
+		{
+			if($idProduit != $item)
+			{
+				$newItems[] = $item;
+			}
+		}
+		
+		$this->items = $newItems;
+	}
+	
+	/**
+	 * Récupère les produits du panier
+	 * @return unknown Récupère le tableau des produits
+	 * du panier
+	 */
 	public function recupereItems()
 	{
 		return $this->items;
