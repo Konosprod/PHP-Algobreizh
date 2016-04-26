@@ -31,7 +31,7 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input class="object{{ i }}" type="number" step="1" min="1" max="10000" value="1">
+                        <input class="object{{ i }}" data=" {{ item.id }} " type="number" step="1" min="1" max="10000" value="1">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong class="uprix{{ i }}">{{ item.prix|number_format(2) }}€</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong class="tprix{{ i }}">{{ item.prix|number_format(2) }}€</strong></td>
@@ -55,7 +55,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td>
-                        <button type="button" class="btn btn-success">
+                        <button type="button" id="btn-valider" class="btn btn-success">
                             Valider <span class="glyphicon glyphicon-play"></span>
                         </button></td>
                     </tr>
@@ -118,6 +118,31 @@
 		}).done(function(data){
 			window.location.reload();
 		});
+	});
+	
+	$('#btn-valider').click(function() {
+	
+		var nbItem = $('input').lenght;
+		var listeProduit[];
+		
+		for(i=0; i < nbItem ; i++){
+			var nomSelecteur = ".object"+id;
+			var nbObjet = $(nomSelecteur).val();
+			var idProduit = $(nomSelecteur).attr('data');
+			var json = {"idProduit":idProduit, "nbObjet":nbObjet};
+			listeProduit.push(json);
+		}
+		
+		var panier = {"panier": listeProduit};
+		
+		$.ajax({
+			url:"ajax.php",
+			type:"POST",
+			dataType:"json",
+			data:panier
+		}).done(function(data){
+		});
+		
 	});
 </script>
 {% endblock %}

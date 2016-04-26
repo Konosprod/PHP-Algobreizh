@@ -24,4 +24,19 @@ if(isset($_POST['removeProduit']))
 	
 	die(json_encode(array("status"=>true)));
 }
+
+if(isset($_POST['panier']))
+{
+	$json = json_decode($_POST['panier']);
+	$items = $json['panier'];
+	
+	
+	
+	
+}
+
+
+
+
+
 ?>
