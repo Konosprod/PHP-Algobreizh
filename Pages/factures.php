@@ -27,7 +27,7 @@ $sql = "SELECT * FROM familles";
 $stmt = $pdo->query($sql);
 $familles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$sql = "SELECT * FROM commandes WHERE codeClient = '".$_SESSION['code']."'";
+$sql = "SELECT * FROM commandes WHERE codeClient = '".$_SESSION['code']."' AND valide = 1";
 $stmt = $pdo->query($sql);
 $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $commandes = array();
@@ -56,5 +56,5 @@ foreach($res as $commande)
 	$commandes[] = $commande;
 }
 
-echo $template->render(array("commandes"=>$commandes, "familles"=>$familles));
+echo $template->render(array("factures"=>$commandes, "familles"=>$familles));
 ?>

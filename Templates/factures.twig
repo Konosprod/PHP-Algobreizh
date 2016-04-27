@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-	{% for commande in commandes %}
+	{% for facture in factures %}
     <div class="row">
     	<div class="col-md-12">
     		<div class="panel panel-default" style="max-width:830px">
@@ -24,7 +24,7 @@
                                 </tr>
     						</thead>
     						<tbody>
-    							{% for item in commande.details %}
+    							{% for item in facture.details %}
     							<tr>
     								<td>{{ item.nom }}</td>
     								<td class="text-center">{{ item.montant|number_format(2) }}€</td>
@@ -36,7 +36,7 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">{{ commande.montant | number_format(2) }}€</td>
+    								<td class="no-line text-right">{{ facture.montant | number_format(2) }}€</td>
     							</tr>
     						</tbody>
     					</table>

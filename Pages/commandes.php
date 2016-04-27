@@ -27,5 +27,41 @@ $stmt = $pdo->query($sql);
 
 $familles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo $template->render(array("familles"=>$familles));
+$sql = "SELECT * FROM commandes WHERE codeClient = '".$_SESSION['code']."' AND valide = 0";
+$stmt = $pdo->query($sql);
+$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$commandes = array();
+
+foreach($res as $commande)
+{
+	$commande["details"] = array();
+	$sql = "SELECT * FROM details WHERE idCommande = '".$commande["idCommande"]."'";
+	$stmt = $pdo->query($sql);
+	$details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$v = array();
+
+	foreach($details as $item)
+	{
+		$nom = $pdo->query("SELECT libelleArticle FROM articles WHERE idArticle ='".$item["idArticle"]."'")->fetch(PDO::FETCH_ASSOC)["libelleArticle"];
+		$var = array();
+
+		$var["nom"] = $nom;
+		$var["montant"] = $item["montant"];
+		$var["qte"] = $item["qteArticle"];
+		$var["total"] = $item["montant"] * $item["qteArticle"];
+		$v[] = $var;
+	}
+
+	$commande["details"] = $v;
+	$commandes[] = $commande;
+}
+
+
+
+
+
+
+
+
+echo $template->render(array("familles"=>$familles, "commandes"=>$commandes));
 ?>
