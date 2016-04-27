@@ -58,6 +58,14 @@ class Panier
 	{
 		return $this->items;
 	}
+	
+	/**
+	 * Vide le panier de tout ses objets
+	 */
+	public function viderPanier()
+	{
+		$this->items = array();
+	}
 }
 
 

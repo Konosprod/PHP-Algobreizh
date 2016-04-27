@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Singleton pour l'accès à la base de données
+ * Singleton pour l'accï¿½s ï¿½ la base de donnï¿½es
  * @author util1p04
  *
  */
@@ -32,14 +32,14 @@ class SPDO
   	const DEFAULT_SQL_USER = 'algobreizh';
  
   	/**
-   	* Constante: hôte de la bdd
+   	* Constante: hï¿½te de la bdd
    	*
    	* @var string
    	*/
   	const DEFAULT_SQL_HOST = 'localhost';
  
   	/**
-   	* Constante: hôte de la bdd
+   	* Constante: hï¿½te de la bdd
    	*
    	* @var string
    	*/
@@ -66,7 +66,7 @@ class SPDO
   	}
  
    /**
-    * Crée et retourne l'objet SPDO
+    * Crï¿½e et retourne l'objet SPDO
     *
     * @access public
     * @static
@@ -83,13 +83,22 @@ class SPDO
   	}
  
  	/**
-   	* Exécute une requête SQL avec PDO
+   	* Exï¿½cute une requï¿½te SQL avec PDO
    	*
-   	* @param string $query La requête SQL
+   	* @param string $query La requï¿½te SQL
    	* @return PDOStatement Retourne l'objet PDOStatement
    	*/
 	public function query($query)
 	{
 		return $this->PDOInstance->query($query);
+	}
+	
+	/**
+	 * RÃ©cupÃ¨re l'id du dernier objet insÃ©rÃ©
+	 * @return Retourne l'id du dernier objet insÃ©rÃ©
+	 */
+	public function lastInsertId()
+	{
+		return $this->PDOInstance->lastInsertId();
 	}
 }
