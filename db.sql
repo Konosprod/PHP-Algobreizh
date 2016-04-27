@@ -99,11 +99,10 @@ CREATE TABLE IF NOT EXISTS `details` (
   `qteArticle` int(11) NOT NULL,
   `montant` float NOT NULL,
   `idCommande` int(11) NOT NULL,
-  `idCommande_commandes` int(11) NOT NULL,
   `idArticle` int(11) NOT NULL,
   PRIMARY KEY (`idDetail`),
   KEY `codeArticle` (`codeArticle`,`idCommande`),
-  KEY `FK_details_idCommande_commandes` (`idCommande_commandes`),
+  KEY `FK_details_idCommande_commandes` (`idCommande`),
   KEY `FK_details_idArticle` (`idArticle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
@@ -176,7 +175,7 @@ ALTER TABLE `commandes`
 --
 ALTER TABLE `details`
   ADD CONSTRAINT `FK_details_idArticle` FOREIGN KEY (`idArticle`) REFERENCES `articles` (`idArticle`),
-  ADD CONSTRAINT `FK_details_idCommande_commandes` FOREIGN KEY (`idCommande_commandes`) REFERENCES `commandes` (`idCommande`);
+  ADD CONSTRAINT `FK_details_idCommande_commandes` FOREIGN KEY (`idCommande`) REFERENCES `commandes` (`idCommande`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
