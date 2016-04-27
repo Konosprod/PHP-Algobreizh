@@ -1,5 +1,5 @@
 {% extends 'base.twig' %}
-
+{% set carousel = true %}
 {% block title %}
 Commandes
 {% endblock %}
@@ -10,7 +10,7 @@ Commandes
     	<div class="col-md-12">
     		<div class="panel panel-default" style="max-width:830px">
     			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Commande n° {{ commande.idCommande }}</strong></h3>
+    				<h3 class="panel-title"><strong>Commande n° {{ commande.idCommande }}  du {{ commande.dateCommande | date("d/m/Y")}}</strong></h3>
     			</div>
     			<div class="panel-body" style="max-width:830px">
     				<div class="table-responsive">

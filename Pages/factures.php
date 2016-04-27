@@ -21,6 +21,13 @@ $twig = new Twig_Environment($loader);
 
 $template = $twig->loadTemplate('factures.twig');
 
+// images pour le carroussel
+$images = array(array('src' => "../Images/images_famille/famille_poudre.png"),
+		array('src' => "../Images/images_famille/famille_pate.png"),
+		array('src' => "../Images/images_famille/famille_seche.png"),
+		array('src' => "../Images/images_famille/famille_conserve.png"));
+
+// Requete SQL
 $pdo = SPDO::getInstance();
 
 $sql = "SELECT * FROM familles";
@@ -32,6 +39,7 @@ $stmt = $pdo->query($sql);
 $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $commandes = array();
 
+// Mise en place des détails de commandes
 foreach($res as $commande)
 {
 	$commande["details"] = array();
@@ -56,5 +64,5 @@ foreach($res as $commande)
 	$commandes[] = $commande;
 }
 
-echo $template->render(array("factures"=>$commandes, "familles"=>$familles));
+echo $template->render(array("factures"=>$commandes, "familles"=>$familles, "images"=>$images));
 ?>
