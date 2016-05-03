@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include 'bootstrap.twig' %}
+		<link rel="stylesheet" href="../Style/style.css">
+		<link rel="icon" type="image/png" href="../Images/AlgoBreizh_Logo_48px.png"/>
+		<title>
+			Administration
+		</title>
+	</head>
+	<body>
+		<div class="container custom-container">
+			
+			<!-- Header du site -->
+			<div class="header">
+				<div class="logo-algo">
+					<a href="admin.php">
+						<img src="../Images/AlgoBreizh_Logo_128px.png">
+						<h1>ALGOBREIZH</h1>
+					</a>
+				</div>
+				<div class="action-user">
+					<div class="deconnexion">
+						<a href="login.php?logout=1"><i class="fa fa-power-off ui-icon"></i> Déconnexion</a>
+					</div>
+				</div>	
+			</div>
+			
+			{% include 'carousel.twig' %}
+			
+			<div class="mainpage">
+			<h3>Commandes en attentes de validation</h3>
+				<div class="contenu-sans-nav">
+				{% if commandes|length > 0 %}
+					{% for commande in commandes %}
+					    <div class="row">
+					    	<div class="col-md-12">
+					    		<div class="panel panel-default" style="max-width:830px">
+					    			<div class="panel-heading">
+					    				<h3 class="panel-title"><strong>Commande n° {{ commande.idCommande }}  du {{ commande.dateCommande | date("d/m/Y")}}</strong></h3>
+					    			</div>
+					    			<div class="panel-body" style="max-width:830px">
+					    				<div class="table-responsive">
+					    					<table class="table table-condensed">
+					    						<thead>
+					                                <tr>
+					        							<td><strong>Produit</strong></td>
+					        							<td class="text-center"><strong>Prix</strong></td>
+					        							<td class="text-center"><strong>Quantité</strong></td>
+					        							<td class="text-right"><strong>Total</strong></td>
+					                                </tr>
+					    						</thead>
+					    						<tbody>
+					    							{% for item in commande.details %}
+					    							<tr>
+					    								<td>{{ item.nom }}</td>
+					    								<td class="text-center">{{ item.montant|number_format(2) }}€</td>
+					    								<td class="text-center">{{ item.qte }}</td>
+					    								<td class="text-right">{{ item.total|number_format(2) }}€</td>
+					    							</tr>
+					    							{% endfor %}
+					    							<tr>
+					    								<td class="no-line"><a href="valide.php?id={{ commande.idCommande }}"class="btn btn-success">Valider <span class="glyphicon glyphicon-play"></span></a></td>
+					    								<td class="no-line"></td>
+					    								<td class="no-line text-center"><strong>Total</strong></td>
+					    								<td class="no-line text-right">{{ commande.montant | number_format(2) }}€</td>
+					    							</tr>
+					    						</tbody>
+					    					</table>
+					    				</div>
+					    			</div>
+					    		</div>
+					    	</div>
+					    </div>
+					{% endfor %}
+				{% else %}
+					<p class="text-seul"><span class="glyphicon glyphicon-exclamation-sign"></span> Aucune commande à valider.</p>
+				{% endif %}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>
