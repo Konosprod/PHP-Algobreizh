@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include 'bootstrap.twig' %}
+		<link rel="stylesheet" href="../Style/style.css">
+		<link rel="icon" type="image/png" href="../Images/AlgoBreizh_Logo_48px.png"/>
+		<title>
+			Erreur
+		</title>
+	</head>
+	<body>
+		<div class="container custom-container">
+			
+			<!-- Header du site -->
+			<div class="header">
+				<div class="logo-algo">
+					<a href="accueil.php">
+						<img src="../Images/AlgoBreizh_Logo_128px.png">
+						<h1>ALGOBREIZH</h1>
+					</a>
+				</div>	
+			</div>
+			
+			{% include 'carousel.twig' %}
+			
+			<!-- Contenu de la page -->
+			<div class="mainpage">
+				<div class="contenu-sans-nav">
+					<p class="text-seul"><span class="glyphicon glyphicon-ban-circle"></span> {{ erreur }}</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
