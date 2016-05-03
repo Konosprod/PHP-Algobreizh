@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Gère les méchanismes de login
+ */
 include_once '../Classes/SPDO.php';
 include_once '../Classes/Panier.php';
 
@@ -40,14 +42,30 @@ if (isset ($_POST["code"]) && isset ($_POST["password"]))
 			$_SESSION['admin'] = true;
 		}
 		
-		header("Location: accueil.php");
+		if(!$_SESSION["admin"])
+		{
+			header("Location: accueil.php");
+			die();
+		}
+		else
+		{
+			header("Location: admin.php");
+			die();
+		}
+	}
+	else
+	{
+		//Si y'a une erreur, on redirige vers la page erreur
+		//avec un code d'erreur à 1 qui indique une erreur
+		//de login
+		header("Location: erreur.php?e=1");
 		die();
 	}
 	
 	
 }
 
-if($_GET["logout"] == 1)
+if(isset($_GET["logout"]) && $_GET["logout"] == 1)
 {
 	$_SESSION["log"] = false;
 	$_SESSION["panier"] = null;

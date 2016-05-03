@@ -6,45 +6,49 @@
 {% endblock %}
 
 {% block content %}
-	{% for facture in factures %}
-    <div class="row">
-    	<div class="col-md-12">
-    		<div class="panel panel-default" style="max-width:830px">
-    			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Commande n° {{ facture.idCommande }} du {{ facture.dateCommande | date("d/m/Y")}}</strong></h3>
-    			</div>
-    			<div class="panel-body" style="max-width:830px">
-    				<div class="table-responsive">
-    					<table class="table table-condensed">
-    						<thead>
-                                <tr>
-        							<td><strong>Produit</strong></td>
-        							<td class="text-center"><strong>Prix</strong></td>
-        							<td class="text-center"><strong>Quantité</strong></td>
-        							<td class="text-right"><strong>Total</strong></td>
-                                </tr>
-    						</thead>
-    						<tbody>
-    							{% for item in facture.details %}
-    							<tr>
-    								<td>{{ item.nom }}</td>
-    								<td class="text-center">{{ item.montant|number_format(2) }}€</td>
-    								<td class="text-center">{{ item.qte }}</td>
-    								<td class="text-right">{{ item.total|number_format(2) }}€</td>
-    							</tr>
-    							{% endfor %}
-    							<tr>
-    								<td class="no-line"></td>
-    								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">{{ facture.montant | number_format(2) }}€</td>
-    							</tr>
-    						</tbody>
-    					</table>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    {% endfor %}
+	{% if factures|length > 0 %}
+		{% for facture in factures %}
+	    <div class="row">
+	    	<div class="col-md-12">
+	    		<div class="panel panel-default" style="max-width:830px">
+	    			<div class="panel-heading">
+	    				<h3 class="panel-title"><strong>Commande n° {{ facture.idCommande }} du {{ facture.dateCommande | date("d/m/Y")}}</strong></h3>
+	    			</div>
+	    			<div class="panel-body" style="max-width:830px">
+	    				<div class="table-responsive">
+	    					<table class="table table-condensed">
+	    						<thead>
+	                                <tr>
+	        							<td><strong>Produit</strong></td>
+	        							<td class="text-center"><strong>Prix</strong></td>
+	        							<td class="text-center"><strong>Quantité</strong></td>
+	        							<td class="text-right"><strong>Total</strong></td>
+	                                </tr>
+	    						</thead>
+	    						<tbody>
+	    							{% for item in facture.details %}
+	    							<tr>
+	    								<td>{{ item.nom }}</td>
+	    								<td class="text-center">{{ item.montant|number_format(2) }}€</td>
+	    								<td class="text-center">{{ item.qte }}</td>
+	    								<td class="text-right">{{ item.total|number_format(2) }}€</td>
+	    							</tr>
+	    							{% endfor %}
+	    							<tr>
+	    								<td class="no-line"></td>
+	    								<td class="no-line"></td>
+	    								<td class="no-line text-center"><strong>Total</strong></td>
+	    								<td class="no-line text-right">{{ facture.montant | number_format(2) }}€</td>
+	    							</tr>
+	    						</tbody>
+	    					</table>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    {% endfor %}
+	{% else %}
+		<p class="text-seul"><span class="glyphicon glyphicon-info-sign"></span> Vous n'avez pas de facture</p>
+	{% endif %}
 {% endblock %}

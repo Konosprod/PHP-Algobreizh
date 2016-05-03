@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Permet de gérer le panier via AJAX
+ * afin de ne pas surcharger le client
+ * de rafraichissement inutiles.
+ */
 include_once '../Classes/Panier.php';
 include_once '../Classes/SPDO.php';
 

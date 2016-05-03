@@ -1,4 +1,9 @@
 <?php
+/**
+ * Permet à un client de faire une demande de 
+ * mot de passe. Celui-ci lui sera envoyé
+ * par mail.
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

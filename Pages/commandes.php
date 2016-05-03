@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page qui permet de gérer l'affichage des
+ * commandes en attente du client
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

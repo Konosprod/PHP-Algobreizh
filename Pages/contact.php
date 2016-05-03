@@ -1,4 +1,7 @@
 <?php
+/**
+ * Affiche les informations de contact
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

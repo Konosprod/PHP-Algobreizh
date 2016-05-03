@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page gérant l'affichage/manipulation du panier
+ * par le client.
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 include_once '../Classes/Panier.php';

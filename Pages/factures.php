@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page gérant l'affichage des factures du client.
+ * A savoir, les commandes qui ont été validées
+ * par l'administrateur.
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

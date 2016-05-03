@@ -1,4 +1,7 @@
 <?php
+/**
+ * Page qui gère l'accueil d'un client
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

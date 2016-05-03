@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page qui permet l'affichages des produits
+ * de l'entreprise, en fonction des familles
+ */
 include_once '../Twig/Autoloader.php';
 include_once '../Classes/SPDO.php';
 

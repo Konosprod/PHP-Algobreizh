@@ -179,5 +179,14 @@ body {
         float:right;
         margin-top:30px;
         maring-left:30px;
+}
 
+.text-seul {
+	font-size:1.6em; 
+	margin-top:10px; 
+	margin-left:15px;
+}
+
+.contenu-sans-nav {
+	min-height:300px;
 }
