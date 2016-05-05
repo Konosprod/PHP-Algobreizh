@@ -16,6 +16,7 @@ if(!$_SESSION["log"])
 	die();
 }
 
+
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../Templates');
@@ -30,5 +31,12 @@ $stmt = $pdo->query($sql);
 
 $familles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo $template->render(array("familles"=>$familles));
+
+
+$images = array(array('src' => "../Images/images_famille/famille_poudre.png"),
+		array('src' => "../Images/images_famille/famille_pate.png"),
+		array('src' => "../Images/images_famille/famille_seche.png"),
+		array('src' => "../Images/images_famille/famille_conserve.png"));
+
+echo $template->render(array("images"=>$images, "familles"=>$familles));
 ?>
