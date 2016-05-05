@@ -57,7 +57,7 @@ if(isset($_POST['panier']))
 		$produit = $stmt->fetch(PDO::FETCH_ASSOC);
 		
 		$sql = "INSERT INTO `details`(`codeArticle`, `qteArticle`, `montant`, `idCommande`, `idArticle`) ".
-				"VALUES ('".$produit["codeArticle"]."','".$item["nbObjet"]."','".($produit["prix"]*$item["nbObjet"])."','".$commandeId."','".$item["idProduit"]."')";
+				"VALUES ('".$produit["codeArticle"]."','".$item["nbObjet"]."','".$produit["prix"]."','".$commandeId."','".$item["idProduit"]."')";
 		$pdo->query($sql);
 	}
 	
