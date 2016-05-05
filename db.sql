@@ -81,13 +81,6 @@ CREATE TABLE IF NOT EXISTS `commandes` (
   KEY `FK_commandes_idUtilisateur` (`idUtilisateur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
---
--- Contenu de la table `commandes`
---
-
-INSERT INTO `commandes` (`idCommande`, `montant`, `dateCommande`, `codeClient`, `valide`, `idUtilisateur`) VALUES
-(1, 9.13, '2016-02-10 08:51:30', 'c00002', 0, 19);
-
 -- --------------------------------------------------------
 
 --
